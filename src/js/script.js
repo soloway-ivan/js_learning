@@ -3,19 +3,22 @@ const selectDOMElement = (selector) => {
 };
 
 //Counter
-const buttonPlus = selectDOMElement('.click-plus');
-const buttonMinus = selectDOMElement('.click-minus');
+const buttonPlus = selectDOMElement('#click-plus');
+const buttonMinus = selectDOMElement('#click-minus');
 const amount = selectDOMElement('.amount');
-let count = amount.innerHTML;
+let count = Number(amount.innerHTML);
 
-buttonMinus.addEventListener('click', () => {
-  amount.innerHTML = `${amount.innerHTML - 1}`;
+function Counter() {
+  buttonMinus.addEventListener('click', () => {
+    amount.innerHTML = count--;
 
-  if (amount.innerHTML <= 0) {
-    amount.innerHTML = 0;
-  }
-})
+    if (count <= 0) {
+      count = 0;
+    }
+  })
 
-buttonPlus.addEventListener('click', () => {
-  count = `${amount.innerHTML++}`;
-})
+  buttonPlus.addEventListener('click', () => {
+    count = amount.innerHTML++;
+  })
+}
+Counter();

@@ -3,9 +3,9 @@ const selectDOMElement = (selector) => {
 };
 
 //Counter
-const buttonPlus = selectDOMElement('.click-plus');
-const buttonMinus = selectDOMElement('.click-minus');
-const amount = selectDOMElement('.amount');
+const buttonPlus = selectDOMElement('#click-plus');
+const buttonMinus = selectDOMElement('#click-minus');
+const amount = selectDOMElement('#amount');
 let count = amount.innerHTML;
 
 buttonMinus.addEventListener('click', () => {

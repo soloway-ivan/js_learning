@@ -58,7 +58,6 @@ let { src, dest } = require('gulp'),
 const build = gulp.series(html, js, css);
 const watch = gulp.parallel(build, browserSync);
 
-
 exports.css = css;
 exports.js = js;
 exports.html = html;

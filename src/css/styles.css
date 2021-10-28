@@ -1,10 +1,10 @@
-.clicker {
+.counter {
   display: flex;
   justify-content: center;
   align-items: baseline
 }
 
-.clicker input {
+.click {
   width: 40px;
   height: 50px;
 }

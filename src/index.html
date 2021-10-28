@@ -8,13 +8,20 @@
   <title>JS Learning</title>
 </head>
 <body>
-
   <div class="clicker">
     <input type="button" class="click-minus" value="-">
     <div class="amount">1</div>
     <input type="button" class="click-plus" value="+">
   </div>
 
+  <div class="scroll-bar">
+    <input id="scroll-bar__pogress" type="range" max="10" min="0" oninput="Slider()" value="0">
+    <div class="scroll-bar__amount">
+      <span id="scroll-bar__current-amount">0</span>
+      <span>/</span>
+      <span id="scroll-bar__all-amount">10</span>
+    </div>
+  </div>
   <script src="/js/script.js"></script>
 </body>
 </html>

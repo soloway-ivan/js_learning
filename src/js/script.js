@@ -19,3 +19,23 @@ buttonMinus.addEventListener('click', () => {
 buttonPlus.addEventListener('click', () => {
   count = `${amount.innerHTML++}`;
 })
+
+//Slider
+const allAmount = selectDOMElement('#scroll-bar__all-amount');
+const progressSlide = selectDOMElement('#scroll-bar__pogress');
+let currentAmount = selectDOMElement('#scroll-bar__current-amount');
+
+function Slider() {
+  amount.innerHTML = progressSlide.value;
+  currentAmount.innerHTML = progressSlide.value;
+
+  buttonMinus.addEventListener('click', () => {
+    currentAmount.innerHTML = progressSlide.value = amount.innerHTML;
+  })
+
+  buttonPlus.addEventListener('click', () => {
+    currentAmount.innerHTML = progressSlide.value = amount.innerHTML;
+  })
+}
+
+Slider()

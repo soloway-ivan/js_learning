@@ -5,37 +5,48 @@ const selectDOMElement = (selector) => {
 //Counter
 const buttonPlus = selectDOMElement('#click-plus');
 const buttonMinus = selectDOMElement('#click-minus');
-const amount = selectDOMElement('#amount');
-let count = amount.innerHTML;
+const currentAmountOfCounter = selectDOMElement('#counter__amount');
+let count = Number(currentAmountOfCounter.innerHTML);
 
-buttonMinus.addEventListener('click', () => {
-  amount.innerHTML = `${amount.innerHTML - 1}`;
 
-  if (amount.innerHTML <= 0) {
-    amount.innerHTML = 0;
-  }
-})
-
-buttonPlus.addEventListener('click', () => {
-  count = `${amount.innerHTML++}`;
-})
-
-//Slider
-const allAmount = selectDOMElement('#scroll-bar__all-amount');
-const progressSlide = selectDOMElement('#scroll-bar__pogress');
-let currentAmount = selectDOMElement('#scroll-bar__current-amount');
-
-function Slider() {
-  amount.innerHTML = progressSlide.value;
-  currentAmount.innerHTML = progressSlide.value;
-
+const Counter = () => {
   buttonMinus.addEventListener('click', () => {
-    currentAmount.innerHTML = progressSlide.value = amount.innerHTML;
+    currentAmountOfCounter.innerHTML = currentAmountOfCounter.innerHTML - 1;
+
+    if (currentAmountOfCounter.innerHTML <= 0) {
+      currentAmountOfCounter.innerHTML = 0;
+    }
   })
 
   buttonPlus.addEventListener('click', () => {
-    currentAmount.innerHTML = progressSlide.value = amount.innerHTML;
+    count = currentAmountOfCounter.innerHTML++;
+
+    if (Number(currentAmountOfCounter.innerHTML) >= 10) {
+      currentAmountOfCounter.innerHTML = 10;
+    }
   })
+}
+
+Counter();
+
+//Slider
+const progressSlide = selectDOMElement('#scroll-bar__pogress');
+let currentStep = selectDOMElement('#scroll-bar__current-amount');
+
+const Slider = () => {
+  //WIP
+  //   amount.innerHTML = progressSlide.value;
+  //   currentAmount.innerHTML = progressSlide.value;
+
+  //   buttonMinus.addEventListener('click', () => {
+  //     currentAmount.innerHTML = progressSlide.value = amount.innerHTML;
+  //   })
+
+  //   buttonPlus.addEventListener('click', () => {
+  //     currentAmount.innerHTML = progressSlide.value = amount.innerHTML;
+  //   })
+
+  currentStep.innerHTML = progressSlide.value;
 }
 
 Slider()

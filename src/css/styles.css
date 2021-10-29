@@ -1,15 +1,19 @@
 .counter {
   display: flex;
   justify-content: center;
-  align-items: baseline
+  align-items: center;
 }
 
-.click {
-  width: 40px;
-  height: 50px;
+.counter__btn {
+  width: 30px;
+  height: 30px;
 }
 
-.amount {
+.counter__btn:hover {
+  transform: scale(1.1);
+}
+
+.counter__amount {
   font-size: 20px;
   color: #1a1a1a;
   margin: 20px;
@@ -18,11 +22,20 @@
 .scroll-bar {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin: 50px 0px 60px 0px;
 }
 
+.scroll-bar__progress {
+  margin: 0 20px;
+}
+
+.scroll-bar__text {
+  font-size: 16px;
+  color: black;
+  margin-right: 5px;
+}
+
 .scroll-bar__amount {
-  font-size: 20px;
   color: #1a1a1a;
-  margin-left: 30px;
 }

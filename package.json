@@ -1,0 +1,27 @@
+{
+  "name": "js_learning",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "browser-sync": "^2.27.6",
+    "gulp": "^4.0.2",
+    "gulp-clean": "^0.4.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "^8.0.0"
+  },
+
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soloway-ivan/js_learning.git"
+  },
+  "author": "slw",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/soloway-ivan/js_learning/issues"
+  },
+  "homepage": "https://github.com/soloway-ivan/js_learning#readme"
+}

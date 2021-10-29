@@ -9,13 +9,33 @@
 </head>
 <body>
   <div class="counter">
-    <input type="button" class="click" id="click-minus" value="-">
-    <div id="amount" class="amount">1</div>
-    <input type="button" class="click" id="click-plus" value="+">
+    <img
+      src="/img/minus-icon.svg"
+      alt="button-minus"
+      class="counter__btn"
+      id="click-minus"
+    >
+    <div class="counter__amount" id="counter__amount">1</div>
+    <img 
+      src="/img/plus-icon.svg"
+      alt="button-plus"
+      class="counter__btn"
+      id="click-plus"
+    >
   </div>
 
   <div class="scroll-bar">
-    <input id="scroll-bar__pogress" type="range" max="10" min="0" oninput="Slider()" value="0">
+    <p class="scroll-bar__text">Choose your step</p>
+    <input
+      class="scroll-bar__progress"
+      id="scroll-bar__pogress"
+      type="range"
+      max="10"
+      min="0"
+      oninput="Slider()"
+      value="0"
+    >
+    <p class="scroll-bar__text">Your current step</p>
     <div class="scroll-bar__amount">
       <span id="scroll-bar__current-amount">0</span>
       <span>/</span>

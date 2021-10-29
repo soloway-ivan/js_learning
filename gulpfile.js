@@ -40,7 +40,7 @@ const html = () => {
 
 
 // WIP
-// const img = () => { 
+// const img = () => {
 //   return src(path.src.img)
 //     .pipe(
 //       imagemin({
@@ -76,11 +76,6 @@ let { src, dest } = require('gulp'),
 const build = gulp.series(html, js, css);
 const watch = gulp.parallel(build, browserSync);
 
-<<<<<<< HEAD
-
-// exports.img = img; WIP
-=======
->>>>>>> 420a32757c5a8c1059858892678c767d87632cc4
 exports.css = css;
 exports.js = js;
 exports.html = html;

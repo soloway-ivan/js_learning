@@ -4,9 +4,15 @@
   align-items: center;
 }
 
+<<<<<<< HEAD
 .counter__btn {
   width: 30px;
   height: 30px;
+=======
+.click {
+  width: 40px;
+  height: 50px;
+>>>>>>> 420a32757c5a8c1059858892678c767d87632cc4
 }
 
 .counter__btn:hover {

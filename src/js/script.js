@@ -5,7 +5,7 @@ const selectDOMElement = (selector) => {
 //Counter
 const buttonPlus = selectDOMElement('#click-plus');
 const buttonMinus = selectDOMElement('#click-minus');
-const currentAmountOfCounter = selectDOMElement('#counter__value');
+const currentAmountOfCounter = selectDOMElement('#counter-value');
 let count = Number(currentAmountOfCounter.innerHTML);
 
   buttonMinus.addEventListener('click', () => {
@@ -26,8 +26,8 @@ let count = Number(currentAmountOfCounter.innerHTML);
 
 
 //Slider
-const progressSlide = selectDOMElement('#scroll-bar__progress');
-let currentStep = selectDOMElement('#scroll-bar__current-amount');
+const progressSlide = selectDOMElement('#scroll-bar-progress');
+let currentStep = selectDOMElement('#scroll-bar-current-amount');
 
 const Slider = () => {
   //WIP

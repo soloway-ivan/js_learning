@@ -9,14 +9,14 @@ const path = {
     html: project_folder,
     css: project_folder + "/css",
     js: project_folder + "/js",
-    // img: project_folder + "/img" WIP
+    img: project_folder + "/img"
   },
 
   src: {
     html: source_folder + "/*.html",
     css: source_folder + "/css/styles.css",
     js: source_folder + "/js/script.js",
-    // img: source_folder + "/img" WIP
+    img: source_folder + "/img/*.svg"
   }
 };
 
@@ -38,20 +38,10 @@ const html = () => {
     }))
 };
 
-
-// WIP
-// const img = () => {
-//   return src(path.src.img)
-//     .pipe(
-//       imagemin({
-//         progressive: true,
-//         svgPlugins: [{removeViewBox: false }],
-//         interPlaced: true,
-//         optimizationLevel: 3
-//       })
-//     )
-//     .pipe(dest(path.build.img))
-// };
+const img = () => {
+  return src(path.src.img)
+    .pipe(dest(path.build.img))
+};
 
 const css = () => {
   return src(path.src.css)
@@ -73,9 +63,10 @@ let { src, dest } = require('gulp'),
   gulp = require('gulp'),
   browsersync = require("browser-sync").create();
 
-const build = gulp.series(html, js, css);
+const build = gulp.series(html, js, css, img);
 const watch = gulp.parallel(build, browserSync);
 
+exports.img = img;
 exports.css = css;
 exports.js = js;
 exports.html = html;

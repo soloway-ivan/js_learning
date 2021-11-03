@@ -15,7 +15,7 @@ const path = {
   src: {
     html: source_folder + "/*.html",
     css: source_folder + "/css/styles.css",
-    js: source_folder + "/js/script.js",
+    js: source_folder + "/js/*.js",
     img: source_folder + "/img/*.svg"
   }
 };

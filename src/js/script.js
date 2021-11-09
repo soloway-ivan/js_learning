@@ -1,9 +1,7 @@
 import { Counter } from "./counter.js";
 import { Slider } from "./slider.js";
 
-// Counter();
-const slider = Slider
-console.log(Slider.getValue());
+const counter = Counter;
+const slider = Slider;
 
-const counter = Counter
-console.log(Counter.getValue());
+slider.onSliderChange(() => { counter.updateCounterStep(slider.getValue()) })

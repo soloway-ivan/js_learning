@@ -1,4 +1,4 @@
-import { selectDOMElement } from './utils.js'
+import { selectDOMElement } from './utils.js';
 
 //Slider
 const Slider = (() => {
@@ -6,6 +6,7 @@ const Slider = (() => {
   const sliderAmountElement = selectDOMElement('#scroll-bar-current-amount');
 
   let value = 1;
+  let sliderChangeCB = () => {}
 
   const getValue = () => {
     return value;
@@ -17,15 +18,21 @@ const Slider = (() => {
 
   const onInputListener = () => {
     value = sliderElement.value;
-    updateAmountElement();
+    updateAmountElement()
+    sliderChangeCB()
   }
 
+  const onSliderChange = (cb) => {
+    sliderChangeCB = cb;
+  } 
+
   sliderElement.value = value;
-  sliderElement.addEventListener('input', onInputListener)
+  sliderElement.addEventListener('input', () => { onInputListener() })
 
   return {
+    onSliderChange,
     getValue
-  } 
+  }
 })();
 
 export { Slider };

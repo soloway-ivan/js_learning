@@ -11,41 +11,50 @@ const Counter = (() => {
   const currentAmountOfCounter = selectDOMElement('#counter-value');
 
   let value = 1;
+  let step = 1;
 
   const getValue = () => {
     return value;
   }
 
-  const updateAmountElement = () => {
-    currentAmountOfCounter.innerHTML = value;
+  const getCurrentStep = () => {
+    return step;
   }
+
+  const updateAmountElement = () => {
+  currentAmountOfCounter.innerHTML = value;
+}
 
   const decrementOfCount = () => {
-    value--;
-    updateAmountElement();
+    (value <= constants.MINSTEP) ? value = constants.MINSTEP : value -= Number(step);
   }
-
-  const stepsVerificationDecrement = () => {
-    getValue();
-    (value <= constants.MINSTEP) ? value = constants.MINSTEP : decrementOfCount();
-  }
-
-  buttonMinus.addEventListener('click', stepsVerificationDecrement)
-
+  
   const incrementOfCount = () => {
-    value++;
+    (value >= constants.MAXSTEP) ? value = constants.MAXSTEP : value += Number(step);
+
+  }
+
+  const updateCounter = (step) => {
+    if (step > 0) {
+      incrementOfCount();
+    }
+  
+    if (step < 0) {
+      decrementOfCount();
+    }
+
     updateAmountElement();
   }
 
-  const stepsVerificationIncrement = () => {
-    getValue();
-    (value >= constants.MAXSTEP) ? value = constants.MAXSTEP : incrementOfCount();
+  const updateCounterStep = (newStepValue) => {
+    step = newStepValue;
   }
 
-  buttonPlus.addEventListener('click', stepsVerificationIncrement)
+  buttonMinus.addEventListener('click', () => {updateCounter(-step)})
+  buttonPlus.addEventListener('click', () => { updateCounter(step)})
 
   return {
-    getValue
+    updateCounterStep
   }
 })();
 

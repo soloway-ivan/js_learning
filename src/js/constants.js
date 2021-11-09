@@ -1,6 +1,6 @@
 const constants = {
   MINSTEP : 1,
-  MAXSTEP : 10
+  MAXSTEP : 101
 }
 
 export { constants }

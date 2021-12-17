@@ -9,10 +9,37 @@
 </head>
 <body>
   <div class="counter">
-    <input type="button" class="click" id="click-minus" value="-">
-    <div id="amount" class="amount">1</div>
-    <input type="button" class="click" id="click-plus" value="+">
+    <img
+      src="/img/minus-icon.svg"
+      alt="button-minus"
+      class="counter__btn"
+      id="click-minus"
+    >
+    <div class="counter__amount" id="counter-value">1</div>
+    <img
+      src="/img/plus-icon.svg"
+      alt="button-plus"
+      class="counter__btn"
+      id="click-plus"
+    >
   </div>
-  <script src="/js/script.js"></script>
+  <div class="scroll-bar">
+    <p class="scroll-bar__text">Choose your step</p>
+    <input
+      class="scroll-bar__progress"
+      id="scroll-bar-progress"
+      type="range"
+      max="10"
+      min="1"
+      
+    >
+    <p class="scroll-bar__text">Your current step</p>
+    <div class="scroll-bar__amount">
+      <span id="scroll-bar-current-amount">1</span>
+      <span>/</span>
+      <span id="scroll-bar-all-amount">10</span>
+    </div>
+  </div>
+  <script type="module" src="/js/script.js"></script>
 </body>
 </html>
